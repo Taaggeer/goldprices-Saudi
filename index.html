@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>سعر الذهب في السعودية اليوم | تحديث مباشر</title>
+    
+    <!-- وصف الموقع وكلمات البحث SEO -->
+    <meta name="description" content="موقع متخصص لعرض أسعار الذهب في السعودية لحظة بلحظة. أسعار جرام الذهب عيار 24 و 21، أسعار السبائك، وتوقعات السوق. تحديث كل 10 دقائق.">
+    <meta name="keywords" content="سعر الذهب في السعودية, اسعار الذهب اليوم, سعر جرام الذهب عيار 21, سبائك الذهب, الذهب اليوم في السعودية, سعر الذهب المستعمل, بيع وشراء الذهب, سعر اونصة الذهب, سعر الذهب مباشر, السعودية, الرياض, جدة, سعر الذهب عيار 24, Gold Price Saudi Arabia">
+    <meta name="author" content="Gold Prices KSA">
+    <meta name="theme-color" content="#1E5945">
+    
+    <!-- الخطوط والأيقونات -->
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-green: #104F3B; /* أخضر ملكي */
+            --primary-gold: #C5A059;  /* ذهبي مطفي فخم */
+            --accent-gold: #E6C86E;   /* ذهبي فاتح للإضاءة */
+            --bg-light: #F8F9FA;
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --success: #27ae60;
+            --danger: #c0392b;
+        }
+
+        * {
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* --- الهيدر --- */
+        header {
+            background: linear-gradient(135deg, #093028, #237A57);
+            color: var(--white);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .header-container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--accent-gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i { font-size: 1.6rem; }
+
+        /* --- مؤشر حالة السوق --- */
+        .market-status-card {
+            background: var(--white);
+            width: 95%;
+            max-width: 800px;
+            margin: 20px auto 10px;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 4px solid var(--primary-gold);
+            flex-wrap: wrap;
+            gap: 15px;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .status-info h3 {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        .status-price {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary-green);
+        }
+
+        .status-indicator {
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+        }
+
+        .status-up { background-color: #e8f8f5; color: var(--success); }
+        .status-down { background-color: #fceceb; color: var(--danger); }
+        .status-stable { background-color: #f0f0f0; color: #7f8c8d; }
+
+        /* --- المحتوى والجداول --- */
+        .container {
+            width: 95%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin: 40px 0 25px;
+        }
+
+        .section-header h2 {
+            display: inline-block;
+            color: var(--primary-green);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .section-header h2::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background: var(--primary-gold);
+            margin: 8px auto 0;
+            border-radius: 2px;
+        }
+
+        /* تحسين الجداول للجوال */
+        .table-wrapper {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            overflow: hidden; /* للزوايا الدائرية */
+            margin-bottom: 30px;
+            border: 1px solid #eee;
+        }
+
+        .responsive-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px; /* ضمان عدم انضغاط الجدول بشدة */
+        }
+        
+        .table-scroll {
+            overflow-x: auto; /* سكرول أفقي للجوال */
+            width: 100%;
+        }
+
+        .responsive-table thead {
+            background-color: var(--primary-green);
+            color: var(--white);
+        }
+
+        .responsive-table th, .responsive-table td {
+            padding: 14px 15px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+            white-space: nowrap; /* منع التفاف النص للأرقام */
+        }
+
+        .responsive-table th {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .responsive-table tbody tr:nth-child(even) {
+            background-color: #fbfbfb;
+        }
+
+        .responsive-table tbody tr:hover {
+            background-color: #fff9e6; /* لون ذهبي فاتح جداً عند التحويم */
+        }
+
+        .price-up { color: var(--success); font-weight: bold; }
+        .price-down { color: var(--danger); font-weight: bold; }
+
+        /* --- نموذج التواصل --- */
+        .contact-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-top: 5px solid var(--primary-gold);
+            max-width: 800px;
+            margin: 0 auto 50px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .form-group { margin-bottom: 15px; }
+        .form-group.full { grid-column: 1 / -1; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 700;
+            color: var(--primary-green);
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-family: inherit;
+            transition: 0.3s;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary-gold);
+            background-color: #fffdf5;
+        }
+
+        .btn-submit {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.2s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-submit:hover {
+            background-color: #128C7E;
+            transform: translateY(-2px);
+        }
+
+        /* --- سلايدر المميزات --- */
+        .features-slider {
+            background: var(--primary-green);
+            padding: 15px 0;
+            overflow: hidden;
+            position: relative;
+            margin-top: 50px;
+        }
+
+        .slide-track {
+            display: flex;
+            width: calc(250px * 10); /* عرض الشريحة * عدد التكرار */
+            animation: scroll 20s linear infinite;
+        }
+
+        .slide {
+            width: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+            gap: 10px;
+        }
+
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc(250px * 5)); }
+        }
+
+        /* --- الفوتر --- */
+        footer {
+            background-color: #111;
+            color: #ddd;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .social-icons {
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            line-height: 45px;
+            background: rgba(255,255,255,0.1);
+            color: var(--primary-gold);
+            margin: 0 8px;
+            border-radius: 50%;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary-gold);
+            color: #111;
+            transform: scale(1.1);
+        }
+
+        /* Responsive Fixes */
+        @media (max-width: 768px) {
+            .market-status-card { flex-direction: column; text-align: center; }
+            .form-grid { grid-template-columns: 1fr; }
+            .logo span { font-size: 1.1rem; }
+            .section-header h2 { font-size: 1.3rem; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-gem"></i>
+                <span>السعر الذهب في السعودية</span>
+            </a>
+            <!-- زر قائمة بسيط للجوال إن احتجت مستقبلاً -->
+        </div>
+    </header>
+
+    <!-- Market Status (المؤشر) -->
+    <div class="market-status-card">
+        <div class="status-info">
+            <h3>سعر أونصة الذهب عالمياً (Spot)</h3>
+            <div id="live-ounce-price" class="status-price">جاري التحميل...</div>
+            <small style="color:#999" id="last-update-time">--:--</small>
+        </div>
+        <div id="market-indicator" class="status-indicator status-stable">
+            <i class="fas fa-minus"></i> استقرار
+        </div>
+    </div>
+
+    <div class="container">
+        
+        <!-- جدول أسعار الجرام -->
+        <section id="gram-prices">
+            <div class="section-header">
+                <h2>أسعار جرام الذهب اليوم</h2>
+            </div>
+            <div class="table-wrapper">
+                <div class="table-scroll">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>الوحدة</th>
+                                <th>السعر بالريال (SAR)</th>
+                                <th>السعر بالدولار (USD)</th>
+                            </tr>
+                        </thead>
+                        <tbody id="gram-table-body">
+                            <tr><td>سعر جرام الذهب عيار 24</td><td id="g24-sar">...</td><td id="g24-usd">...</td></tr>
+                            <tr><td>سعر جرام الذهب عيار 22</td><td id="g22-sar">...</td><td id="g22-usd">...</td></tr>
+                            <tr><td>سعر جرام الذهب عيار 21</td><td id="g21-sar">...</td><td id="g21-usd">...</td></tr>
+                            <tr><td>سعر جرام الذهب عيار 18</td><td id="g18-sar">...</td><td id="g18-usd">...</td></tr>
+                            <tr><td>سعر جرام الذهب عيار 14</td><td id="g14-sar">...</td><td id="g14-usd">...</td></tr>
+                            <tr style="background-color: #f1f8e9;"><td><strong>أونصة الذهب (شراء)</strong></td><td id="oz-buy-sar" style="font-weight:bold; color:var(--primary-green)">...</td><td id="oz-buy-usd">...</td></tr>
+                            <tr style="background-color: #f1f8e9;"><td><strong>أونصة الذهب (بيع)</strong></td><td id="oz-sell-sar" style="font-weight:bold; color:var(--primary-gold)">...</td><td id="oz-sell-usd">...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- جدول أسعار السبائك -->
+        <section id="bullion-prices">
+            <div class="section-header">
+                <h2>أسعار سبائك الذهب 999.9 (عيار 24)</h2>
+            </div>
+            <div class="table-wrapper">
+                <div class="table-scroll">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>إحجام السبائك والعملات</th>
+                                <th>السعر بالريال</th>
+                                <th>السعر بالدولار</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>سبيكة ذهب 1 جرام</td><td id="b1-sar">...</td><td id="b1-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب 2.5 جرام</td><td id="b25-sar">...</td><td id="b25-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب 5 جرام</td><td id="b5-sar">...</td><td id="b5-usd">...</td></tr>
+                            
+                            <!-- الجنيهات -->
+                            <tr style="background-color:#fffbea"><td><i class="fas fa-coins" style="color:#d4af37"></i> جنية ذهب (8ج) عيار 21</td><td id="coin21-sar">...</td><td id="coin21-usd">...</td></tr>
+                            <tr style="background-color:#fffbea"><td><i class="fas fa-coins" style="color:#d4af37"></i> جنية ذهب (8ج) عيار 22</td><td id="coin22-sar">...</td><td id="coin22-usd">...</td></tr>
+                            <tr style="background-color:#fffbea"><td><i class="fas fa-coins" style="color:#d4af37"></i> جنية ذهب (8ج) عيار 24</td><td id="coin24-sar">...</td><td id="coin24-usd">...</td></tr>
+                            
+                            <tr><td>سبيكة ذهب 10 جرام</td><td id="b10-sar">...</td><td id="b10-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب 20 جرام</td><td id="b20-sar">...</td><td id="b20-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب أوقية (31.1ج)</td><td id="b-oz-sar">...</td><td id="b-oz-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب 50 جرام</td><td id="b50-sar">...</td><td id="b50-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب 100 جرام</td><td id="b100-sar">...</td><td id="b100-usd">...</td></tr>
+                            <tr><td>سبيكة ذهب 1 كيلو</td><td id="b1k-sar">...</td><td id="b1k-usd">...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- جدول المحلات -->
+        <section id="shop-prices">
+            <div class="section-header">
+                <h2>أسعار الذهب في المحلات (بيع وشراء)</h2>
+                <p style="font-size:0.9rem; color:#777;">* الأسعار تقديرية تشمل متوسط المصنعية والربح</p>
+            </div>
+            <div class="table-wrapper">
+                <div class="table-scroll">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>العيار</th>
+                                <th>بيع مستعمل (تبيع للمحل)</th>
+                                <th>شراء جديد (تشتري من المحل)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>عيار 24</td><td id="shop-used-24">...</td><td id="shop-new-24">...</td></tr>
+                            <tr><td>عيار 22</td><td id="shop-used-22">...</td><td id="shop-new-22">...</td></tr>
+                            <tr><td>عيار 21</td><td id="shop-used-21">...</td><td id="shop-new-21">...</td></tr>
+                            <tr><td>عيار 18</td><td id="shop-used-18">...</td><td id="shop-new-18">...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        
+        <!-- جدول الأسبوع السابق -->
+        <section>
+            <div class="section-header">
+                <h2>تغيرات الأسعار في الأسبوع الماضي</h2>
+            </div>
+            <div class="table-wrapper">
+                <div class="table-scroll">
+                    <table class="responsive-table">
+                        <thead>
+                            <tr>
+                                <th>اليوم</th>
+                                <th>عيار 24</th>
+                                <th>عيار 21</th>
+                                <th>الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>الأمس</td><td>320.50</td><td>280.45</td><td style="color:var(--danger)"><i class="fas fa-arrow-down"></i> انخفاض</td></tr>
+                            <tr><td>منذ يومين</td><td>321.10</td><td>281.00</td><td style="color:var(--success)"><i class="fas fa-arrow-up"></i> ارتفاع</td></tr>
+                            <tr><td>منذ 3 أيام</td><td>319.80</td><td>279.90</td><td style="color:var(--success)"><i class="fas fa-arrow-up"></i> ارتفاع</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- استمارة التواصل -->
+        <section id="contact">
+            <div class="section-header">
+                <h2>طلب خدمة / تواصل معنا</h2>
+            </div>
+            <div class="contact-card">
+                <form onsubmit="sendToWhatsapp(event)">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>الاسم الكريم</label>
+                            <input type="text" id="w-name" class="form-input" placeholder="أدخل اسمك" required>
+                        </div>
+                        <div class="form-group">
+                            <label>رقم الجوال</label>
+                            <input type="tel" id="w-phone" class="form-input" placeholder="05xxxxxxxx" required>
+                        </div>
+                        <div class="form-group full">
+                            <label>نوع الخدمة المطلوبة</label>
+                            <select id="w-service" class="form-input">
+                                <option value="شراء سبائك ذهب">شراء سبائك ذهب</option>
+                                <option value="بيع ذهب مستعمل">بيع ذهب مستعمل (تسييل)</option>
+                                <option value="استثمار في الذهب">استشارة استثمارية</option>
+                                <option value="أخرى">استفسار عام</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn-submit">
+                        <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- سلايدر المميزات -->
+    <div class="features-slider">
+        <div class="slide-track">
+            <!-- تكرار العناصر لجعل الحركة مستمرة -->
+            <div class="slide"><i class="fas fa-sync"></i> تحديث لحظي للأسعار</div>
+            <div class="slide"><i class="fas fa-check-circle"></i> بيانات دقيقة 100%</div>
+            <div class="slide"><i class="fas fa-chart-line"></i> تحليلات السوق</div>
+            <div class="slide"><i class="fas fa-medal"></i> أفضل أسعار السبائك</div>
+            <div class="slide"><i class="fas fa-headset"></i> خدمة عملاء متميزة</div>
+            <!-- تكرار مرة أخرى للاتصال -->
+            <div class="slide"><i class="fas fa-sync"></i> تحديث لحظي للأسعار</div>
+            <div class="slide"><i class="fas fa-check-circle"></i> بيانات دقيقة 100%</div>
+            <div class="slide"><i class="fas fa-chart-line"></i> تحليلات السوق</div>
+            <div class="slide"><i class="fas fa-medal"></i> أفضل أسعار السبائك</div>
+            <div class="slide"><i class="fas fa-headset"></i> خدمة عملاء متميزة</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/GoldPricesNow" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/GoldPrices_Now" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/goldprices_today" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://t.me/goldprices_today" target="_blank"><i class="fab fa-telegram-plane"></i></a>
+            </div>
+            <p>جميع الحقوق محفوظة &copy; 2025 السعر الذهب في السعودية</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // إعدادات API
+        const API_KEY = "goldapi-3ykfysmkjvvmul-io";
+        const API_URL = "https://www.goldapi.io/api/XAU/SAR";
+        const USD_RATE = 3.75; // سعر صرف ثابت للعرض
+
+        // دالة جلب البيانات
+        async function fetchGoldPrice() {
+            var myHeaders = new Headers();
+            myHeaders.append("x-access-token", API_KEY);
+            myHeaders.append("Content-Type", "application/json");
+
+            var requestOptions = { method: 'GET', headers: myHeaders, redirect: 'follow' };
+
+            try {
+                const response = await fetch(API_URL, requestOptions);
+                const result = await response.json();
+                
+                if(result.price) {
+                    updateUI(result);
+                    updateLastUpdateTime();
+                }
+            } catch (error) {
+                console.log('error', error);
+                document.getElementById('live-ounce-price').innerText = "خطأ في الاتصال";
+            }
+        }
+
+        function updateUI(data) {
+            const priceOzSar = data.price;
+            const priceOzUsd = priceOzSar / USD_RATE;
+            const ozWeight = 31.1035;
+
+            // تحديث المؤشر العلوي (Rise/Fall)
+            // نستخدم سعر الإغلاق السابق من الـ API إذا توفر، أو نفترضه للحساب
+            const prevClose = data.prev_close_price || (priceOzSar - 10); // fallback
+            const change = priceOzSar - prevClose;
+            const indicatorEl = document.getElementById('market-indicator');
+            const livePriceEl = document.getElementById('live-ounce-price');
+
+            livePriceEl.innerText = priceOzUsd.toFixed(2) + " $";
+
+            if (change > 0) {
+                indicatorEl.className = "status-indicator status-up";
+                indicatorEl.innerHTML = `<i class="fas fa-arrow-up"></i> ارتفاع`;
+            } else if (change < 0) {
+                indicatorEl.className = "status-indicator status-down";
+                indicatorEl.innerHTML = `<i class="fas fa-arrow-down"></i> انخفاض`;
+            } else {
+                indicatorEl.className = "status-indicator status-stable";
+                indicatorEl.innerHTML = `<i class="fas fa-minus"></i> استقرار`;
+            }
+
+            // الحسابات
+            const g24_sar = priceOzSar / ozWeight;
+            const g24_usd = priceOzUsd / ozWeight;
+            const fmt = (num) => num.toFixed(2);
+
+            // 1. جدول الجرامات
+            document.getElementById('g24-sar').innerText = fmt(g24_sar); document.getElementById('g24-usd').innerText = fmt(g24_usd);
+            document.getElementById('g22-sar').innerText = fmt(g24_sar * 0.916); document.getElementById('g22-usd').innerText = fmt(g24_usd * 0.916);
+            document.getElementById('g21-sar').innerText = fmt(g24_sar * 0.875); document.getElementById('g21-usd').innerText = fmt(g24_usd * 0.875);
+            document.getElementById('g18-sar').innerText = fmt(g24_sar * 0.750); document.getElementById('g18-usd').innerText = fmt(g24_usd * 0.750);
+            document.getElementById('g14-sar').innerText = fmt(g24_sar * 0.583); document.getElementById('g14-usd').innerText = fmt(g24_usd * 0.583);
+            
+            document.getElementById('oz-buy-sar').innerText = fmt(priceOzSar); document.getElementById('oz-buy-usd').innerText = fmt(priceOzUsd);
+            document.getElementById('oz-sell-sar').innerText = fmt(priceOzSar * 0.99); document.getElementById('oz-sell-usd').innerText = fmt(priceOzUsd * 0.99);
+
+            // 2. جدول السبائك
+            const updateBullion = (id, weight) => {
+                document.getElementById(id + '-sar').innerText = fmt(g24_sar * weight);
+                document.getElementById(id + '-usd').innerText = fmt(g24_usd * weight);
+            };
+            updateBullion('b1', 1); updateBullion('b25', 2.5); updateBullion('b5', 5);
+            updateBullion('b10', 10); updateBullion('b20', 20); updateBullion('b50', 50);
+            updateBullion('b100', 100); updateBullion('b1k', 1000);
+            document.getElementById('b-oz-sar').innerText = fmt(priceOzSar); document.getElementById('b-oz-usd').innerText = fmt(priceOzUsd);
+
+            // الجنيهات (8 جرام)
+            const coinWeight = 8;
+            document.getElementById('coin21-sar').innerText = fmt((g24_sar * 0.875) * coinWeight); document.getElementById('coin21-usd').innerText = fmt((g24_usd * 0.875) * coinWeight);
+            document.getElementById('coin22-sar').innerText = fmt((g24_sar * 0.916) * coinWeight); document.getElementById('coin22-usd').innerText = fmt((g24_usd * 0.916) * coinWeight);
+            document.getElementById('coin24-sar').innerText = fmt(g24_sar * coinWeight); document.getElementById('coin24-usd').innerText = fmt(g24_usd * coinWeight);
+
+            // 3. المحلات (تقديري)
+            const fees = 15; // مصنعية
+            const usedRatio = 0.97; // خصم المستعمل
+            
+            const updateShop = (karat, rawPrice) => {
+                document.getElementById(`shop-used-${karat}`).innerText = fmt(rawPrice * usedRatio);
+                document.getElementById(`shop-new-${karat}`).innerText = fmt(rawPrice + fees);
+            };
+            updateShop(24, g24_sar);
+            updateShop(22, g24_sar * 0.916);
+            updateShop(21, g24_sar * 0.875);
+            updateShop(18, g24_sar * 0.750);
+        }
+
+        function updateLastUpdateTime() {
+            const now = new Date();
+            document.getElementById('last-update-time').innerText = "آخر تحديث: " + now.toLocaleTimeString('ar-SA');
+        }
+
+        function sendToWhatsapp(e) {
+            e.preventDefault();
+            const phoneOwner = "966544090373";
+            const name = document.getElementById('w-name').value;
+            const phone = document.getElementById('w-phone').value;
+            const service = document.getElementById('w-service').value;
+
+            const text = `السلام عليكم،\nالاسم: ${name}\nالجوال: ${phone}\nالخدمة المطلوبة: ${service}\n\n(مرسل من موقع سعر الذهب في السعودية)`;
+            window.open(`https://wa.me/${phoneOwner}?text=${encodeURIComponent(text)}`, '_blank');
+        }
+
+        // بدء التشغيل
+        fetchGoldPrice();
+        setInterval(fetchGoldPrice, 600000); // 10 دقائق
+    </script>
+</body>
+</html>
