@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- إعدادات السيو والكلمات المفتاحية -->
+    <title>احمد بابقي | خبير اعلانات قوقل - شريكك للنمو الرقمي</title>
+    <meta name="description" content="احمد بابقي، خبير اعلانات قوقل ومسوق رقمي بخبرة 25 عاماً. خدمات إدارة حملات Google Ads، تحسين محركات البحث SEO، وتصميم متاجر إلكترونية تحقق أعلى المبيعات.">
+    <meta name="keywords" content="خبير اعلانات قوقل, خبير اعلانات جوجل, مسوق اعلانات قوقل, GOOGLE ADS, ادارة حملات قوقل, تحسين السيو, احمد بابقي">
+    <meta name="author" content="احمد بابقي">
+    
+    <!-- لون المتصفح (للجوال) -->
+    <meta name="theme-color" content="#059669">
+
+    <!-- الأيقونة -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/2702/2702602.png">
+
+    <!-- الخطوط العربية (Cairo) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- مكتبة Tailwind CSS للتصميم -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#059669', // Emerald 600
+                        secondary: '#1e3a8a', // Blue 900
+                        accent: '#10b981', // Emerald 500
+                        dark: '#0f172a', // Slate 900
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- مكتبة Swiper للسلايدرات -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- مكتبة FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- مكتبة Animation (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #059669;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #047857;
+        }
+
+        .text-shadow-lg {
+            text-shadow: 0 4px 8px rgba(0,0,0,0.6);
+        }
+        
+        /* Glassmorphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-dark {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Swiper Customization */
+        .hero-swiper {
+            height: 85vh; /* Taller hero section */
+            min-height: 600px;
+        }
+        .hero-slide-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(5, 150, 105, 0.85) 0%, rgba(30, 58, 138, 0.75) 100%);
+        }
+        
+        /* Portfolio Cards */
+        .portfolio-card {
+            transition: all 0.4s ease;
+        }
+        .portfolio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Floating Buttons */
+        .floating-btn {
+            z-index: 9999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .floating-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translate3d(0, 40px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- الشريط العلوي (Navbar) - Glassmorphism -->
+    <nav class="glass fixed w-full z-50 transition-all duration-300 shadow-sm" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="bg-gradient-to-br from-primary to-green-400 text-white p-2.5 rounded-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                    <i class="fa-solid fa-chart-line text-2xl"></i>
+                </div>
+                <div class="leading-tight">
+                    <h1 class="text-2xl font-black text-gray-800 tracking-tight group-hover:text-primary transition-colors">احمد بابقي</h1>
+                    <span class="text-xs text-primary font-bold tracking-wider uppercase">Google Ads Expert</span>
+                </div>
+            </a>
+            
+            <div class="hidden lg:flex gap-8 font-bold text-gray-600">
+                <a href="#home" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">الرئيسية</a>
+                <a href="#about" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">من أنا</a>
+                <a href="#services" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">مميزاتي</a>
+                <a href="#portfolio" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">أعمالي</a>
+                <a href="#pricing" class="hover:text-primary transition py-2 border-b-2 border-transparent hover:border-primary">الأسعار</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="tel:0544090373" class="hidden md:flex items-center gap-2 text-gray-600 hover:text-primary font-bold transition">
+                    <i class="fa-solid fa-phone-flip"></i>
+                    <span dir="ltr">0544090373</span>
+                </a>
+                <a href="#contact" class="bg-gradient-to-r from-primary to-green-600 hover:from-green-600 hover:to-primary text-white px-6 py-2.5 rounded-full font-bold transition shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5">
+                    اطلب استشارة مجانية
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. القسم الرئيسي (Hero Slider) - تصميم احترافي جديد -->
+    <section id="home" class="relative">
+        <div class="swiper hero-swiper">
+            <div class="swiper-wrapper">
+                <!-- Slide 1 -->
+                <div class="swiper-slide w-full relative">
+                    <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');"></div>
+                    <div class="absolute inset-0 hero-overlay"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                            <div class="text-white text-right order-2 lg:order-1 pt-16">
+                                <div class="inline-block bg-white/20 backdrop-blur-sm px-4 py-1 rounded-full text-sm font-bold mb-4 border border-white/30 animate-fadeInUp">
+                                    🚀 شريكك الاستراتيجي للنمو
+                                </div>
+                                <h2 class="text-5xl md:text-7xl font-black mb-6 leading-tight text-shadow-lg animate-fadeInUp delay-200">
+                                    خبير إعلانات <span class="text-green-400">Google Ads</span>
+                                </h2>
+                                <p class="text-xl md:text-2xl mb-8 text-gray-100 font-light max-w-lg animate-fadeInUp delay-400">
+                                    حقق أعلى عائد على الاستثمار (ROI) وتصدر نتائج البحث الأولى مع استراتيجيات مدروسة وخبرة 25 عاماً.
+                                </p>
+                                <div class="flex flex-wrap gap-4 animate-fadeInUp delay-400">
+                                    <a href="#contact" class="bg-white text-primary px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-100 transition shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                                        ابدأ حملتك الآن
+                                    </a>
+                                    <a href="#portfolio" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition">
+                                        شاهد النتائج
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- صورة تعبيرية او جرافيك -->
+                            <div class="hidden lg:block order-1 lg:order-2 animate-fadeInUp delay-400">
+                                <div class="relative">
+                                    <div class="absolute -inset-4 bg-green-500/30 rounded-full blur-3xl"></div>
+                                    <img src="https://cdni.iconscout.com/illustration/premium/thumb/seo-analysis-4268352-3561001.png" alt="SEO Graphic" class="relative z-10 w-full max-w-md mx-auto drop-shadow-2xl filter brightness-110">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slide 2 -->
+                <div class="swiper-slide w-full relative">
+                    <div class="hero-slide-bg" style="background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-primary/80"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="container mx-auto px-4 text-center text-white pt-20">
+                            <h2 class="text-5xl md:text-7xl font-black mb-6 text-shadow-lg animate-fadeInUp">تصدر نتائج البحث <span class="text-yellow-400">SEO</span></h2>
+                            <p class="text-xl md:text-3xl mb-10 font-light max-w-3xl mx-auto animate-fadeInUp delay-200">اجعل موقعك في الصفحة الأولى وضاعف مبيعاتك مجاناً عبر تحسين محركات البحث.</p>
+                             <a href="#contact" class="bg-yellow-400 text-gray-900 px-10 py-4 rounded-full font-bold text-xl hover:bg-yellow-300 transition shadow-lg animate-fadeInUp delay-400">
+                                اطلب تحليل مجاني لموقعك
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination Controls -->
+            <div class="swiper-pagination !bottom-8"></div>
+        </div>
+
+        <!-- شريط الإحصائيات العائم -->
+        <div class="container mx-auto px-4 relative -mt-16 z-20">
+            <div class="bg-white rounded-2xl shadow-xl p-8 grid grid-cols-2 md:grid-cols-4 gap-8 border-b-4 border-primary">
+                <div class="text-center group">
+                    <div class="text-4xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">+25</div>
+                    <div class="text-gray-500 font-bold text-sm">عاماً من الخبرة</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-4xl font-black text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">+500</div>
+                    <div class="text-gray-500 font-bold text-sm">حملة ناجحة</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-4xl font-black text-primary mb-2 group-hover:scale-110 transition-transform duration-300">%98</div>
+                    <div class="text-gray-500 font-bold text-sm">رضا العملاء</div>
+                </div>
+                <div class="text-center group">
+                    <div class="text-4xl font-black text-secondary mb-2 group-hover:scale-110 transition-transform duration-300">Millions</div>
+                    <div class="text-gray-500 font-bold text-sm">مبيعات محققة</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- نبذة تعريفية (محسن) -->
+    <section id="about" class="py-24 bg-white text-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto" data-aos="fade-up">
+                <span class="text-primary font-bold tracking-widest uppercase text-sm bg-green-50 px-4 py-1 rounded-full border border-green-100">لماذا تختارنا؟</span>
+                <h2 class="text-4xl md:text-5xl font-black text-gray-800 mt-6 mb-8 leading-tight">
+                    خبرة عقدين ونصف <br> نضعها بين يديك
+                </h2>
+                <div class="relative bg-gradient-to-br from-gray-50 to-white p-8 md:p-12 rounded-3xl shadow-lg border border-gray-100">
+                    <i class="fa-solid fa-quote-right text-6xl text-gray-100 absolute top-4 right-8"></i>
+                    <p class="text-gray-600 text-lg md:text-xl leading-relaxed relative z-10 text-justify font-medium">
+                        عندما يتعلق الأمر بإدارة حملات <span class="font-bold text-secondary">Google Ads</span>، يعد 
+                        <span class="font-bold text-primary border-b-2 border-primary">احمد بابقي</span> اسماً بارزاً في هذا المجال. 
+                        بفضل خبرته الطويلة ومعرفته العميقة بأسرار الخوارزميات، نحن لا ندير الإعلانات فحسب، بل نصنع استراتيجيات نمو متكاملة تضمن لك التفوق على المنافسين وتقليل تكلفة النقرة وزيادة المبيعات.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- المميزات (Grid حديث) -->
+    <section id="services" class="py-20 bg-gray-50 relative">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-green-50 to-transparent opacity-50"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-black text-gray-800 mb-4">خدمات احترافية لنتائج استثنائية</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">مجموعة متكاملة من الحلول الرقمية المصممة خصيصاً لنمو أعمالك</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Service Cards with Modern Design -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-brands fa-google"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">تصميم حملات قوقل</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">تصميم حملات إعلانية مبتكرة تستهدف عميلك المثالي بدقة عالية لضمان أفضل تحويل.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-shield-virus"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">حماية من النقرات الوهمية</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">أنظمة حماية متطورة لكشف ومنع نقرات المنافسين للحفاظ على ميزانيتك للعملاء الحقيقيين فقط.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-phone-volume"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">مضاعفة الاتصالات</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">تحسين جودة الإعلان وصفحات الهبوط لزيادة نسبة الاتصال المباشر من العملاء المحتملين.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">استهداف شرائي دقيق</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">نصل إلى الجمهور المستعد للشراء الآن، مما يرفع نسبة المبيعات ويقلل تكلفة الاستحواذ.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-primary text-2xl mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-shoe-prints"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">تتبع سلوك الزائر</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">تحليل رحلة العميل داخل موقعك لفهم العقبات وإزالتها لتحسين تجربة المستخدم وزيادة المبيعات.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100" data-aos="fade-up" data-aos-delay="500">
+                    <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-secondary text-2xl mb-6 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                        <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    </div>
+                    <h3 class="font-bold text-xl mb-3 text-gray-800">تطوير مستمر</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">لا نتوقف عند إطلاق الحملة، بل نقوم بتحسين يومي لضمان بقاء الأداء في القمة.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 md:col-span-2" data-aos="fade-up" data-aos-delay="600">
+                    <div class="flex items-start gap-4">
+                        <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center text-primary text-2xl shrink-0 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <i class="fa-brands fa-google-analytics"></i>
+                        </div>
+                        <div>
+                             <h3 class="font-bold text-xl mb-3 text-gray-800">تحليل بيانات Google Analytics</h3>
+                             <p class="text-gray-500 text-sm leading-relaxed">خبرة عميقة في قراءة البيانات وتحويل الأرقام إلى قرارات استراتيجية تضاعف أرباحك.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ضمانات الخدمة (Dark Section) -->
+    <section class="py-20 bg-dark text-white relative overflow-hidden">
+        <!-- Background Patterns -->
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#059669 1px, transparent 1px); background-size: 30px 30px;"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <div class="lg:w-1/3" data-aos="fade-right">
+                    <h2 class="text-4xl font-black mb-6 leading-tight">التزامنا تجاهك <br><span class="text-primary">يفوق التوقعات</span></h2>
+                    <p class="text-gray-400 text-lg mb-8">نحن لا نقدم خدمة فقط، بل نبني شراكة نجاح طويلة الأمد.</p>
+                    <a href="#contact" class="inline-flex items-center gap-2 bg-primary hover:bg-green-600 text-white px-8 py-3 rounded-xl font-bold transition shadow-lg shadow-primary/25">
+                        ابدأ مشروعك
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                </div>
+                
+                <div class="lg:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Feature Items -->
+                    <div class="glass-dark p-6 rounded-xl flex items-center gap-4 hover:bg-white/5 transition" data-aos="fade-up">
+                        <div class="w-12 h-12 bg-yellow-500/20 rounded-full flex items-center justify-center text-yellow-400 text-xl">
+                            <i class="fa-solid fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">سرعة التنفيذ</h4>
+                            <p class="text-gray-400 text-sm">استلام الحملة جاهزة خلال 48 ساعة</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-dark p-6 rounded-xl flex items-center gap-4 hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center text-green-400 text-xl">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">عائد استثمار مرتفع</h4>
+                            <p class="text-gray-400 text-sm">تركيز كامل على زيادة الأرباح</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-dark p-6 rounded-xl flex items-center gap-4 hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center text-blue-400 text-xl">
+                            <i class="fa-solid fa-file-invoice"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">تقارير يومية</h4>
+                            <p class="text-gray-400 text-sm">شفافية تامة ومتابعة عبر الواتساب</p>
+                        </div>
+                    </div>
+
+                    <div class="glass-dark p-6 rounded-xl flex items-center gap-4 hover:bg-white/5 transition" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-12 h-12 bg-purple-500/20 rounded-full flex items-center justify-center text-purple-400 text-xl">
+                            <i class="fa-solid fa-laptop-code"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg">تصميم صفحات هبوط</h4>
+                            <p class="text-gray-400 text-sm">صفحات سريعة ومحسنة للإعلانات</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- معرض الأعمال (Portfolio) -->
+    <section id="portfolio" class="py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            
+            <!-- Google Ads -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-10 w-2 bg-primary rounded-full"></div>
+                    <h3 class="text-3xl font-black text-gray-800">نماذج إعلانات قوقل (Google Ads)</h3>
+                </div>
+                <div class="swiper mySwiper !pb-12">
+                    <div class="swiper-wrapper" id="ads-gallery"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- SEO -->
+            <div class="mb-20" data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-10 w-2 bg-secondary rounded-full"></div>
+                    <h3 class="text-3xl font-black text-gray-800">تصدر نتائج البحث (SEO)</h3>
+                </div>
+                <div class="swiper mySwiper !pb-12">
+                    <div class="swiper-wrapper" id="seo-gallery"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+            <!-- Sales -->
+            <div data-aos="fade-up">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="h-10 w-2 bg-green-400 rounded-full"></div>
+                    <h3 class="text-3xl font-black text-gray-800">قصص نجاح ومبيعات (المتاجر)</h3>
+                </div>
+                <div class="swiper mySwiper !pb-12">
+                    <div class="swiper-wrapper" id="sales-gallery"></div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- الأسعار (Pricing) - تصميم بطاقات عصري -->
+    <section id="pricing" class="py-24 bg-gray-50 relative">
+        <!-- Background Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-50 to-white h-full w-full -z-0"></div>
+        
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-4xl font-black text-gray-800">باقات الاستثمار الذكي</h2>
+                <p class="mt-3 text-gray-500">اختر الخطة التي تناسب حجم طموحاتك</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- Plan 1 -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 relative group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="p-8 pb-0">
+                        <h3 class="text-2xl font-bold text-gray-700">بداية سريعة</h3>
+                        <p class="text-gray-400 text-sm mt-1">تجربة لمدة أسبوع</p>
+                        <div class="my-6">
+                            <span class="text-5xl font-black text-gray-800">1000</span>
+                            <span class="text-gray-500 font-bold">ريال</span>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <ul class="space-y-4 mb-8 text-gray-600">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> انشاء حملة احترافية</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> حماية من النقرات الوهمية</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> استلام خلال 48 ساعة</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> متابعة يومية</li>
+                        </ul>
+                        <button onclick="selectPlan('باقة الأسبوع')" class="w-full py-4 rounded-xl font-bold border-2 border-primary text-primary hover:bg-primary hover:text-white transition-colors duration-300">
+                            احجز الباقة
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan 2 (Popular) -->
+                <div class="bg-gradient-to-b from-dark to-slate-800 text-white rounded-3xl shadow-2xl overflow-hidden transform md:-translate-y-4 relative" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute top-0 inset-x-0 h-2 bg-gradient-to-r from-primary to-green-400"></div>
+                    <div class="absolute top-4 right-4 bg-primary/20 text-primary border border-primary/50 text-xs font-bold px-3 py-1 rounded-full">
+                        الأكثر طلباً
+                    </div>
+                    <div class="p-8 pb-0">
+                        <h3 class="text-2xl font-bold">باقة النمو</h3>
+                        <p class="text-gray-400 text-sm mt-1">لمدة 15 يوم</p>
+                        <div class="my-6 text-primary">
+                            <span class="text-5xl font-black text-white">1600</span>
+                            <span class="text-gray-400 font-bold">ريال</span>
+                            <span class="block text-sm text-gray-500 line-through mt-1">2000 ريال</span>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <ul class="space-y-4 mb-8 text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> كل مميزات الباقة السابقة</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> تحسين مستمر للأداء (Optimization)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> تقارير أداء تفصيلية</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> استشارات تحسين الموقع</li>
+                        </ul>
+                        <button onclick="selectPlan('باقة 15 يوم')" class="w-full py-4 rounded-xl font-bold bg-primary hover:bg-green-600 text-white transition-colors duration-300 shadow-lg shadow-primary/30">
+                            احجز الباقة الآن
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Plan 3 -->
+                <div class="bg-white rounded-3xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-2xl transition-all duration-300 relative group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="p-8 pb-0">
+                        <h3 class="text-2xl font-bold text-gray-700">الباقة الاحترافية</h3>
+                        <p class="text-gray-400 text-sm mt-1">شهر كامل</p>
+                        <div class="my-6">
+                            <span class="text-5xl font-black text-gray-800">3500</span>
+                            <span class="text-gray-500 font-bold">ريال</span>
+                        </div>
+                    </div>
+                    <div class="p-8 pt-0">
+                        <ul class="space-y-4 mb-8 text-gray-600">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> إدارة شاملة VIP</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> تصميم صفحات هبوط (عند الحاجة)</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> تحليل عميق للمنافسين</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-primary"></i> دعم فني ذو أولوية</li>
+                        </ul>
+                        <button onclick="selectPlan('باقة الشهر الكامل')" class="w-full py-4 rounded-xl font-bold border-2 border-secondary text-secondary hover:bg-secondary hover:text-white transition-colors duration-300">
+                            احجز الباقة
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- نموذج التواصل (تصميم Clean) -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-5xl mx-auto bg-gray-50 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col md:flex-row">
+                <!-- Info Side -->
+                <div class="bg-dark text-white p-12 md:w-2/5 flex flex-col justify-between relative overflow-hidden">
+                    <div class="absolute inset-0 bg-primary/20 rounded-full blur-3xl -translate-y-1/2 -translate-x-1/2"></div>
+                    <div class="relative z-10">
+                        <h2 class="text-3xl font-black mb-6">لنبدأ رحلة النجاح</h2>
+                        <p class="text-gray-400 mb-8 leading-relaxed">املأ النموذج وسنقوم بالرد عليك في أسرع وقت ممكن لمناقشة مشروعك.</p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-primary"><i class="fa-solid fa-phone"></i></div>
+                                <div>
+                                    <p class="text-xs text-gray-400">اتصل بنا</p>
+                                    <p class="font-bold font-mono">0544090373</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-primary"><i class="fa-solid fa-envelope"></i></div>
+                                <div>
+                                    <p class="text-xs text-gray-400">البريد الإلكتروني</p>
+                                    <p class="font-bold">info@ahmedbabqi.com</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12 flex gap-4 relative z-10">
+                        <a href="https://x.com/TaaggeeR" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.instagram.com/taaggeer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@taaggeer" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition"><i class="fa-brands fa-tiktok"></i></a>
+                    </div>
+                </div>
+
+                <!-- Form Side -->
+                <div class="p-12 md:w-3/5 bg-white">
+                    <div id="thank-you-msg" class="hidden h-full flex flex-col items-center justify-center text-center">
+                        <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mb-6 animate-bounce">
+                            <i class="fa-solid fa-check text-5xl text-primary"></i>
+                        </div>
+                        <h3 class="text-3xl font-black text-gray-800 mb-2">شكراً لك!</h3>
+                        <p class="text-gray-500">تم استلام طلبك بنجاح. سيتواصل معك فريقنا قريباً.</p>
+                    </div>
+
+                    <form id="contact-form" onsubmit="submitForm(event)" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-bold text-sm mb-2">الاسم الكريم</label>
+                                <input type="text" required class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-white transition" placeholder="الاسم هنا">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-bold text-sm mb-2">رقم الجوال</label>
+                                <input type="tel" required class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-white transition text-left" placeholder="05xxxxxxxx">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-bold text-sm mb-2">نوع الخدمة المطلوبة</label>
+                            <div class="relative">
+                                <select id="service-select" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-white transition appearance-none cursor-pointer">
+                                    <option>إدارة حملات قوقل</option>
+                                    <option>تحسين محركات البحث SEO</option>
+                                    <option>تصميم متجر/موقع</option>
+                                    <option>استشارة عامة</option>
+                                    <option>باقة الأسبوع</option>
+                                    <option>باقة 15 يوم</option>
+                                    <option>باقة الشهر الكامل</option>
+                                </select>
+                                <div class="absolute left-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-500">
+                                    <i class="fa-solid fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-bold text-sm mb-2">تفاصيل الرسالة</label>
+                            <textarea rows="4" class="w-full px-4 py-4 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/50 focus:bg-white transition resize-none" placeholder="اكتب تفاصيل مشروعك أو استفسارك هنا..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-primary text-white py-4 rounded-xl font-bold text-lg hover:bg-green-700 transition shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+                            <span>إرسال الطلب</span>
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white pt-20 pb-10 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-right">
+                <div>
+                    <div class="flex items-center gap-2 justify-center md:justify-start mb-6">
+                        <i class="fa-solid fa-chart-line text-3xl text-primary"></i>
+                        <h3 class="text-2xl font-black text-white">احمد بابقي</h3>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        شريكك الاستراتيجي في عالم التسويق الرقمي. نجمع بين الخبرة والإبداع لتحقيق نتائج ملموسة لمشروعك.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6 border-b-2 border-primary inline-block pb-2">روابط سريعة</h3>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#home" class="hover:text-primary transition flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-left text-xs"></i> الرئيسية</a></li>
+                        <li><a href="#services" class="hover:text-primary transition flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-left text-xs"></i> الخدمات</a></li>
+                        <li><a href="#portfolio" class="hover:text-primary transition flex items-center gap-2 justify-center md:justify-start"><i class="fa-solid fa-chevron-left text-xs"></i> نماذج الأعمال</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6 border-b-2 border-primary inline-block pb-2">تواصل معنا</h3>
+                    <div class="flex justify-center md:justify-start gap-4 mb-8">
+                        <a href="https://www.tiktok.com/@taaggeer" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-primary transition text-xl"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.instagram.com/taaggeer" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-pink-600 transition text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://x.com/TaaggeeR" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-blue-400 transition text-xl"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="https://www.youtube.com/@TaaggeeR" target="_blank" class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center hover:bg-red-600 transition text-xl"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <a href="tel:0544090373" class="text-2xl font-bold text-primary dir-ltr hover:text-white transition">0544090373</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm">
+                <p>جميع الحقوق محفوظة © 2025 احمد بابقي | تصميم وتطوير احترافي</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- الأيقونات العائمة -->
+    <a href="https://wa.me/966544090373" target="_blank" class="floating-btn bg-[#25D366] text-white rounded-full flex items-center justify-center w-14 h-14 fixed bottom-6 right-6 hover:bg-[#20bd5a]" title="تواصل عبر واتساب">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+    <a href="tel:0544090373" class="floating-btn bg-secondary text-white rounded-full flex items-center justify-center w-14 h-14 fixed bottom-24 right-6 hover:bg-blue-800" title="اتصل الآن">
+        <i class="fa-solid fa-phone text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // تهيئة مكتبة الأنيميشن
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+
+        // داتا الصور كما طلب المستخدم
+        const adsImages = [
+            "https://taaggeer.com/wp-content/uploads/2026/01/11500-ريال.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/3.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/2.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/1.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/222.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/رعاية-الطبية.jpg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/فندق-.jpg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/111.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/2-البيت-الحديث-.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/316-339-5849-البيت-الحديث-.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/زاهية-الفضة-3.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/456-108-1350-زاهية-الفضة-.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/زاهية-الفضة-2.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/3-متجر-ابان.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/459-208-7568-متجر-ابان.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/Trust-Lab-3.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/قوقل-ادز-مبيعات.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-12-07-at-3.54.05-AM.jpeg"
+        ];
+
+        const seoImages = [
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.25.30-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.25.03-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.24.38-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.24.18-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.23.58-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.23.22-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.08.57-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.08.12-PM.jpeg",
+            "https://taaggeer.com/wp-content/uploads/2026/01/WhatsApp-Image-2025-06-19-at-10.07.29-PM.jpeg"
+        ];
+
+        const salesImages = [
+            "https://taaggeer.com/wp-content/uploads/2026/01/ابان-330-الف-ريال.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/307000.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/307-الف.png",
+            "https://taaggeer.com/wp-content/uploads/2026/01/303000.png"
+        ];
+
+        // دالة لإنشاء شرائح السلايدر
+        function createSlides(containerId, images) {
+            const container = document.getElementById(containerId);
+            images.forEach(src => {
+                const div = document.createElement('div');
+                div.className = 'swiper-slide portfolio-card bg-gray-100 rounded-2xl overflow-hidden shadow-md';
+                // اضافة معالج خطأ للصورة لاستبدالها في حال لم تعمل الروابط المستقبلية
+                div.innerHTML = `<img src="${src}" alt="صورة عمل" loading="lazy" class="w-full h-64 object-cover" onerror="this.src='https://placehold.co/400x400/059669/white?text=Ahmed+Babqi+Ads'">`;
+                container.appendChild(div);
+            });
+        }
+
+        // بناء السلايدرات
+        createSlides('ads-gallery', adsImages);
+        createSlides('seo-gallery', seoImages);
+        createSlides('sales-gallery', salesImages);
+
+        // تفعيل Swiper للقسم الرئيسي
+        new Swiper(".hero-swiper", {
+            loop: true,
+            effect: 'fade',
+            speed: 1000,
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        // تفعيل Swiper لباقي الأقسام
+        new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 25,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+                1280: {
+                    slidesPerView: 4,
+                },
+            },
+        });
+
+        // اختيار الباقة وتوجيهها للفورم
+        function selectPlan(planName) {
+            document.getElementById('service-select').value = planName;
+            document.getElementById('contact').scrollIntoView({behavior: 'smooth'});
+        }
+
+        // معالجة نموذج التواصل
+        function submitForm(event) {
+            event.preventDefault();
+            const form = document.getElementById('contact-form');
+            form.style.opacity = '0';
+            setTimeout(() => {
+                form.style.display = 'none';
+                document.getElementById('thank-you-msg').classList.remove('hidden');
+                document.getElementById('thank-you-msg').classList.add('flex');
+            }, 300);
+        }
+
+        // تغيير خلفية النافبار عند السكرول
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.replace('bg-transparent', 'glass');
+            } else {
+                navbar.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+</html>
